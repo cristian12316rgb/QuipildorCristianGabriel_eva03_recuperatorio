@@ -56,28 +56,7 @@ public class FuerzaArmada {
 		for(Vehiculo prueba:this.convoy) {
 			if(prueba.getCodigo().equals(cod_vehiculo)) {
 				
-				switch(nueva) {
-				case TERRESTRE:
-					if(prueba instanceof Terrestre) {
-						return this.batallas.get(clave).agregarVehiculosEnLaBatalla(prueba);
-					}else{
-						throw new VehiculoIncompatible("Vehiculo incompatible");
-					}
-				case AEREA:
-					if(prueba instanceof Volador) {
-						return this.batallas.get(clave).agregarVehiculosEnLaBatalla(prueba);
-					}else {
-						throw new VehiculoIncompatible("Vehiculo incompatible");
-					}
-				case NAVAL:
-					if(prueba instanceof Acuatico) {
-						return this.batallas.get(clave).agregarVehiculosEnLaBatalla(prueba);
-					}else {
-						throw new VehiculoIncompatible("Vehiculo incompatible");
-					}
-				
-				}
-				
+				return this.batallas.get(clave).agregarVehiculosEnLaBatalla(prueba);
 				
 			}
 		}
